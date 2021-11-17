@@ -1,0 +1,47 @@
+syntax = "proto3";
+package kuaishou.ad.rta;
+//生成文件所在包名
+option java_package = "com.metaapp.ug.rta.api.dto.protobuf";
+//生成的java文件名
+option java_outer_classname = "RTAKuaiShouRequestDto";
+
+enum OsType {
+  UNKNOWN_OS = 0; // 未知类型
+  ANDROID = 1; // Android
+  IOS = 2; // iOS
+}
+
+enum DeviceType {
+  UNKNOWN_DEVICE = 0; // 未知类型
+  PHONE = 1; // 手机
+  TABLET = 2; // 平板
+}
+
+enum Gender {
+  UNKNOWN_GENDER = 0; // 未知
+  MALE = 1; // 男
+  FEMALE = 2; // 女
+}
+
+message Req {
+  string id = 1; // 请求唯一id
+  OsType os_type = 2; // 系统
+  string did_md5 = 3; // 安卓为 imei_md5，ios 为 idfa_md5
+  string tag_id = 4; // 广告位 ID
+
+  Gender gender = 5; // 性别
+  int32 age = 6; // 年龄段, 0(<18), 1(18~23), 2(24~30), 3(31~40), 4(41~49), 5(>50)
+  string city = 7; // 城市
+  DeviceType device_type = 8; // 机型
+  string model = 9; // 设备型号
+  string oaid = 10; // 设备oaid
+  string user_agent = 11; //请求UA信息
+
+  string current_caid = 21; // 当前caid
+  string current_caid_version = 22; // 当前caid版本
+  string last_caid = 23; // 上一版本caid
+  string last_caid_version = 24;// 上一版本caid版本
+  string brand = 25; //手机厂商名
+  uint64 media_industry_id = 26;  //媒体一级行业id
+  string feature = 101; // 实验or策略信息，需线下约定
+}
