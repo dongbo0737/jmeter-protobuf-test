@@ -123,7 +123,7 @@ public class ProtobufRestfulSample extends AbstractJavaSamplerClient implements 
     		return args;
     	}
     	args = new Arguments();
-    	args.addArgument("URL", "http://rtapi-dev.233xyx.com/rta/filter/filterKuaiShouActivePerson");
+    	args.addArgument("URL", "http://xx");
     	args.addArgument("actionMethod", "POST");
     	args.addArgument("proto.id", "32143124");
         args.addArgument("proto.didMd5", "12e43af08bda236dc14bbe0463c03e7d");
